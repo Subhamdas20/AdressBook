@@ -1,14 +1,15 @@
 package com.bz.addressbook;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
+        ArrayList<AddressBook> contacts = new ArrayList<>();
         AddressBook contact_One = new AddressBook();
-        AddressBook contact_Two = new AddressBook();
-        AddressBook contact_Three = new AddressBook();
         contact_One.setData();
-        contact_Two.setData();
+        contacts.add(contact_One);
+
     }
 }

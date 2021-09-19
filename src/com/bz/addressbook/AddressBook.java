@@ -78,34 +78,50 @@ public class AddressBook {
                 System.out.println("Entered name not  found in the AddressBook");
         }
     }
-    public static void main(String[] args) {
-        System.out.println("================================");
-        System.out.println("Welcome to Address Book");
-        System.out.println("================================");
-        int i=1;
-        while(i!=0) {
-            Scanner sc = new Scanner(System.in);
-            System.out.println("Enter 1 to add contact\nEnter 2 to edit details of contacts\nEnter 3 for showing details of contacts ");
-            System.out.println(".......................................");
-            int userChoice = sc.nextInt();
-            switch (userChoice) {
-                case 1:
-                    addContacts();
-                    break;
-                case 2:
-                    System.out.println("Enter the first name by which u want to edit contact");
-                    String name=sc.next();
-                    editContacts(name);
-                    break;
-                case 3 :
-                    showContacts();
-                    break;
-                default:
-                    System.out.println("Invalid Input");
+    public static void deleteContact(String name) {
+        for (Contacts contact : contact_Details) {
+            if (name.equalsIgnoreCase(contact.firstName)) {
+                System.out.println("Entered Name found in the contacts, deleting contact");
+                contact_Details.remove(contact);
             }
+            else
+                System.out.println("Entered name not found in the AddressBook");
         }
     }
-}
+            public static void main (String[]args){
+                System.out.println("================================");
+                System.out.println("Welcome to Address Book");
+                System.out.println("================================");
+                int i = 1;
+                while (i != 0) {
+                    Scanner sc = new Scanner(System.in);
+                    System.out.println("Enter 1 to add contact\nEnter 2 to edit details of contacts\nEnter 3 for deleting contact\nEnter 4 for showing details of contacts ");
+                    System.out.println(".......................................");
+                    int userChoice = sc.nextInt();
+                    switch (userChoice) {
+                        case 1:
+                            addContacts();
+                            break;
+                        case 2:
+                            System.out.println("Enter the first name by which u want to edit contact");
+                            String name = sc.next();
+                            editContacts(name);
+                            break;
+                        case 3:
+                            System.out.println("Enter the first name by which u want to edit contact");
+                            String search_Name = sc.next();
+                            deleteContact(search_Name);
+                            break;
+                        case 4:
+                            showContacts();
+                            break;
+                        default:
+                            System.out.println("Invalid Input");
+                    }
+                }
+            }
+        }
+
 
 
 

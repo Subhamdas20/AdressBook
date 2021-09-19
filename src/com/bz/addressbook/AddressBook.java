@@ -117,6 +117,7 @@ public class AddressBook {
                             break;
                         default:
                             System.out.println("Invalid Input");
+                            break;
                     }
                 }
             }

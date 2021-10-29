@@ -2,10 +2,8 @@ package com.bz.addressbook;
 
 public class AddressBook {
 
-    String firstName,lastName,address,city,state,emailId;
-    int zip,phoneNumber;
-
-
+    String firstName, lastName, address, city, state, emailId;
+    int zip, phoneNumber;
     public String getFirstName() {
         return firstName;
     }
@@ -70,8 +68,4 @@ public class AddressBook {
         this.phoneNumber = phoneNumber;
     }
 
-
-
-
-
-    }
+}

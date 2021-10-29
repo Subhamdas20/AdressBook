@@ -3,10 +3,8 @@ package com.bz.addressbook;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-
 public class AddressBook {
     static ArrayList<Contacts> contact_Details = new ArrayList<>();
-
     public static void addContacts() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the number of contacts you want to save");

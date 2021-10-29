@@ -3,10 +3,12 @@ package com.bz.addressbook;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
+
 public class AddressBook {
     static ArrayList<Contacts> contact_Details = new ArrayList<>();
-    static HashMap<String ,AddressBook> addressBooks = new HashMap<>();
+    static HashMap<String, AddressBook> addressBooks = new HashMap<>();
     static Scanner sc = new Scanner(System.in);
+
     public void addContacts() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the number of contacts you want to save");
@@ -35,22 +37,23 @@ public class AddressBook {
             contact_Details.add(details);
         }
     }
+
     public static void editContacts(String name) {
 
         for (Contacts contact : contact_Details) {
             if (name.equalsIgnoreCase(contact.firstName)) {
                 System.out.println("Entered Name found in the contacts");
                 System.out.println("Enter the updated first name");
-                String firstName=sc.next();
+                String firstName = sc.next();
                 contact.setFirstName(firstName);
                 System.out.println("Enter the updated last name");
-                String lastName=sc.next();
+                String lastName = sc.next();
                 contact.setLastName(lastName);
                 System.out.println("Enter the updated address");
-                String address=sc.next();
+                String address = sc.next();
                 contact.setAddress(address);
                 System.out.println("Enter the updated city");
-                String city=sc.next();
+                String city = sc.next();
                 contact.setCity(city);
                 System.out.println("Enter the updated state");
                 String state = sc.next();
@@ -68,16 +71,17 @@ public class AddressBook {
                 System.out.println("Entered name not  found in the AddressBook");
         }
     }
+
     public static void deleteContact(String name) {
         for (Contacts contact : contact_Details) {
             if (name.equalsIgnoreCase(contact.firstName)) {
                 System.out.println("Entered Name found in the contacts, deleting contact");
                 contact_Details.remove(contact);
-            }
-            else
+            } else
                 System.out.println("Entered name not found in the AddressBook");
         }
     }
+
     public static void showContacts() {
         int i = 1;
         for (Contacts contact : contact_Details) {
@@ -86,13 +90,14 @@ public class AddressBook {
             i++;
         }
     }
-    public static void main (String[]args){
+
+    public static void main(String[] args) {
         AddressBook book1 = new AddressBook();
         AddressBook book2 = new AddressBook();
         AddressBook book3 = new AddressBook();
-        addressBooks.put("AddressBook1",book1);
-        addressBooks.put("AddressBook2",book2);
-        addressBooks.put("AddressBook3",book3);
+        addressBooks.put("AddressBook1", book1);
+        addressBooks.put("AddressBook2", book2);
+        addressBooks.put("AddressBook3", book3);
         System.out.println("================================");
         System.out.println("Welcome to Address Book");
         System.out.println("================================");
@@ -106,9 +111,9 @@ public class AddressBook {
                 case 1:
                     System.out.println("Enter 1 to for AddressBook1 2 for AddressBook2 and 3 for AddressBook3");
                     int choise = sc.nextInt();
-                    if(choise==1) book1.addContacts();
-                    else if(choise == 2) book2.addContacts();
-                    else if(choise == 3) book3.addContacts();
+                    if (choise == 1) book1.addContacts();
+                    else if (choise == 2) book2.addContacts();
+                    else if (choise == 3) book3.addContacts();
                     else System.out.println("Option not found");
                     break;
                 case 2:
